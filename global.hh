@@ -1,0 +1,43 @@
+#include </usr/local/include/fftw3.h>  // This is for My Mac Pro
+//#include </opt/sharcnet/fftw/3.3.2/intel/include/fftw3.h> // This is for Sharcnet
+
+
+#include <stdio.h>     //Include the standard input/output libraries
+#include <iostream>  //Cout and Cin etc.
+#include <fstream>
+#include <stdlib.h>    //Include standard fucntion libraries
+#include <math.h>      //Use the math function libraries
+#include <time.h>      //Call system time libraries to define the integer seed for random numbers
+#include "./include/smemory.hh"  //Use my custom memory handling class
+//#include "mpi.h"     //Use this for MPI parallel implimentation later 
+using namespace std;
+
+#define Nx 20
+#define Ny 20
+#define Nz 20
+
+#define ChainType 6
+#define Pi 3.14159
+
+int Iomega;
+int box_min;
+int AlphaB, Bilayer;
+
+
+double kappa;
+double fA,fC,fB1,fB2,fB3;
+double forceD,forceE;
+double LAM, HEX, BCC;
+double activity;
+double mu_homo, mu_copo;
+double Phi_Copo_Dis, Phi_Homo_Dis;
+double Phi_Copo_Ord, Phi_Homo_Ord;
+
+double Free_Energy, Free_Energy_Homo;
+double Lx, Ly, Lz;
+
+fftw_plan forward_plan, inverse_plan;
+double *input_q, *transformed_q, *final_q;
+
+
+
