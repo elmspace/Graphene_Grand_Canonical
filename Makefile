@@ -1,4 +1,4 @@
 LFLAGS = -lm -lfftw3  
 
 main: main.cpp 
-	g++ $(LFLAGS) -o $@ $(MOBLIB) $(SUBFILES) main.cpp $(LIBS)
+	g++ -std=c++11 $(LFLAGS) -o $@ $(MOBLIB) $(SUBFILES) main.cpp $(LIBS)
