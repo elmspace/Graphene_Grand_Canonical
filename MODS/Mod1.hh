@@ -28,7 +28,7 @@ void Mod1(double ****w, double ****phi, double ***eta, double *Ns, double ds, do
     
     FreeEnergy(w,phi,eta,Ns,ds,k_vector,chi,dxyz,chiMatrix);
     
-    std::ofstream outputFile37("./RESULTS/MOD_main_delfE_vs_delV.dat" , ios::app);
+    std::ofstream outputFile37("./RESULTS/MOD1.dat" , ios::app);
     outputFile37 <<kappa<<" "<<mu_homo<<" "<<Phi_Copo_Dis<<" "<<Phi_Homo_Dis<<" "<<Phi_Copo_Ord<<" "<<Phi_Homo_Ord<<" "<<Free_Energy<<" "<<Free_Energy_Homo<<" "<<Lx<<" "<<Ly<<" "<<Lz<<std::endl;
     outputFile37.close();
 

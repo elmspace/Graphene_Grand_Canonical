@@ -36,8 +36,8 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   // 2 = Random Field
   Iomega=0;
 
-  AlphaB=0;
-  Bilayer=1;
+  AlphaB=1;
+  Bilayer=0;
   
   
   //set the morphology 1=on 0=off
@@ -46,9 +46,9 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   BCC=0.0;
   
     
-  Lx=2.8;
-  Ly=5.4;
-  Lz=6.75;
+  Lx=2.4;
+  Ly=5.3;
+  Lz=7.3;
 
   dxyz[0]=Lx/Nx;
   dxyz[1]=Ly/Ny;

@@ -10,6 +10,8 @@ void omega(double ****w){
     std::ifstream infile;
     if(AlphaB==1){infile.open("./OMEGA/omega_20_20_20_phiC_99.read");}
     if(Bilayer==1){infile.open("./OMEGA/omega_20_20_20_Bilayer.read");}
+
+    
     
     for(i=0;i<Nx;i++){
       for(j=0;j<Ny;j++){

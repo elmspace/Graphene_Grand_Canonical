@@ -1,13 +1,29 @@
 % Program IsoSurface, run by typing run("./main.m")
-
-
 % Clear all previous variables
 clear all;
+
+Hom_Con = 0.941571;
+
+Hom_Con_string = num2str(Hom_Con,8);
+xyz = fullfile(['xyz_',Hom_Con_string,'_.dat'])
+ABCD = fullfile(['ABCD_',Hom_Con_string,'_.dat'])
+
+del=1.0;
+
+Cop_Con = 1.0-Hom_Con;
+pA=0.1*Cop_Con*del;
+pC=0.1*Cop_Con*del;
+pB1=0.355*Cop_Con*del;
+pB2=0.09*Cop_Con*del;
+pB3=0.355*Cop_Con*del;
+
+pB4=Hom_Con*del;
+
 % Getting the coordiante variables from the data, and making them
 % into the correct format, mesh
-A=importdata('./xyz.dat');
+A=importdata(xyz);
 %getting the concentration from the data file
-B=importdata('./ABCD.dat');
+B=importdata(ABCD);
 
 [X,Y,Z]=meshgrid(A(:,2),A(:,1),A(:,3));
 
@@ -52,14 +68,14 @@ clear ii;
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 % Thres3old for the isosurf, 
-cutA=0.15;
-cutC=0.15;
-cutB2=0.22; %center block
+cutA=pA;
+cutC=pC;
+cutB2=pB2; %center block
 
-cutB1=0.25;
-cutB3=0.25;
+cutB1=pB1;
+cutB3=pB3;
 
-cutB4=0.3; %Homopolymer 1
+cutB4=pB4; %Homopolymer 1
 
 
 axis vis3d;
@@ -72,8 +88,8 @@ daspect('mode');
 pB1 = patch(isosurface(X,Y,Z,VB1,cutB1),'FaceColor','green','EdgeColor','none');
 qB1 = patch(isocaps(X,Y,Z,VB1,cutB1),'FaceColor','green','EdgeColor', ...
           'none');
-alpha(pB1,0.25);
-alpha(qB1,0.25);
+alpha(pB1,0.5);
+alpha(qB1,0.5);
 
 % B2
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -88,16 +104,16 @@ alpha(qB2,0.5);
 pB3 = patch(isosurface(X,Y,Z,VB3,cutB3),'FaceColor','green','EdgeColor','none');
 qB3 = patch(isocaps(X,Y,Z,VB3,cutB3),'FaceColor','green','EdgeColor', ...
           'none');
-alpha(pB3,0.25);
-alpha(qB3,0.25);
+alpha(pB3,0.5);
+alpha(qB3,0.5);
 
 % B4
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 pB4 = patch(isosurface(X,Y,Z,VB4,cutB4),'FaceColor','yellow','EdgeColor','none');
 qB4 = patch(isocaps(X,Y,Z,VB4,cutB4),'FaceColor','yellow','EdgeColor', ...
           'none');
-alpha(pB4,0.4);
-alpha(qB4,0.4);
+alpha(pB4,0.5);
+alpha(qB4,0.5);
 
 
 
@@ -106,8 +122,8 @@ alpha(qB4,0.4);
 pA = patch(isosurface(X,Y,Z,VA,cutA),'FaceColor','red','EdgeColor','none');
 qA = patch(isocaps(X,Y,Z,VA,cutA),'FaceColor','red','EdgeColor', ...
          'none');
-alpha(pA,0.7);
-alpha(qA,0.7);
+alpha(pA,0.5);
+alpha(qA,0.5);
 
 % C
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
