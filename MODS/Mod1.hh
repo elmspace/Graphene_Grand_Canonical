@@ -15,7 +15,7 @@ void Mod1(double ****w, double ****phi, double ***eta, double *Ns, double ds, do
 
   parameters(chi,ds,Ns,dxyz,chiMatrix);
     
-  mu_homo=-25.0;
+  mu_homo=-20.0;
   mu_copo=0.0;
   activity=(1.0/kappa)*exp(kappa*mu_homo - mu_copo);
   
@@ -24,7 +24,7 @@ void Mod1(double ****w, double ****phi, double ***eta, double *Ns, double ds, do
   
   do{
 
-    std::cout<<"Homopolymer Activity=  "<<activity<<std::endl;
+    std::cout<<kappa<<" "<<mu_homo<<" "<<Phi_Copo_Dis<<" "<<Phi_Homo_Dis<<" "<<Phi_Copo_Ord<<" "<<Phi_Homo_Ord<<" "<<Free_Energy<<" "<<Free_Energy_Homo<<" "<<Lx<<" "<<Ly<<" "<<Lz<<std::endl;
     
     FreeEnergy(w,phi,eta,Ns,ds,k_vector,chi,dxyz,chiMatrix);
     

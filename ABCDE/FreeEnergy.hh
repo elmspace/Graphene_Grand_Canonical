@@ -22,7 +22,7 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
   // Calculating the Homogenous Free Energy
   fE_homo=homogenousfE(chiMatrix,chi);
 
-  std::cout<<"Dis Copolymer Concentration:  "<<Phi_Copo_Dis<<"  Dis Homopolymer Concentration:   "<<Phi_Homo_Dis<<std::endl;
+  //std::cout<<"Dis Copolymer Concentration:  "<<Phi_Copo_Dis<<"  Dis Homopolymer Concentration:   "<<Phi_Homo_Dis<<std::endl;
   
   msg=1.0;
   oldfE=1.0e2;
@@ -33,12 +33,17 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
     currentfE=0.0;
     deltafE=0.0;
   
-    epsilon=0.05;
-    gamma=0.05;
-  
     iter=0;  
     
     do{
+
+      if(iter<500){
+	epsilon=0.01;
+	gamma=0.01;
+      }else{
+	epsilon=0.05;
+	gamma=0.05;
+      }
     
       iter++;
     
@@ -107,7 +112,7 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
 
       deltafE=fabs(currentfE-oldfE_iter);
 
-      std::cout<<iter<<" "<<currentfE<< " " << deltaW<<" "<<deltafE<<" "<<Phi_Copo_Ord<<" "<<Phi_Homo_Ord<<std::endl;
+      //std::cout<<"Iter="<<iter<<"   fE="<<currentfE+fE_homo<<"   fE_homo="<<fE_homo<< "   delW=" << deltaW<<"   pCopo="<<Phi_Copo_Ord<<"   pHom="<<Phi_Homo_Ord<<std::endl;
       oldfE_iter=currentfE;
 
       for(i=0;i<Nx;i++){
@@ -121,6 +126,8 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
 	  }
 	}
       }
+
+      SaveData(phi,w,dxyz);
       
     }while(deltaW>precision);//while(iter<maxIter);//
 

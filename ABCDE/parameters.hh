@@ -45,10 +45,9 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   HEX=1.0;
   BCC=0.0;
   
-    
-  Lx=2.4;
-  Ly=5.3;
-  Lz=7.3;
+  Lx=2.35;
+  Ly=4.15;
+  Lz=4.75;
 
   dxyz[0]=Lx/Nx;
   dxyz[1]=Ly/Ny;

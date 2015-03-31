@@ -3,6 +3,7 @@ void omega(double ****w){
   int i,j,k;
   int ii,jj,kk;
   double junk;
+  double eps =1.0;
  
 
   if(Iomega==0){
@@ -17,6 +18,12 @@ void omega(double ****w){
       for(j=0;j<Ny;j++){
 	for(k=0;k<Nz;k++){
 	  infile >> ii >> jj >> kk >> w[0][i][j][k] >> w[1][i][j][k] >> w[2][i][j][k] >> w[3][i][j][k] >> w[4][i][j][k] >> w[5][i][j][k];
+	  w[0][i][j][k] *=eps;
+	  w[1][i][j][k] *=eps;
+	  w[2][i][j][k] *=eps;
+	  w[3][i][j][k] *=eps;
+	  w[4][i][j][k] *=eps;
+	  w[5][i][j][k] *=eps;
 	}
       }
     }
