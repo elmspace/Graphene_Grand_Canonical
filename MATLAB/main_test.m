@@ -6,8 +6,8 @@ FileName = 0.0;
 File_String = num2str(FileName,8);
 
 
-xyz = fullfile(['xyz.dat']);
-ABCD = fullfile(['ABCD.dat']);
+xyz = fullfile(['xyz_0.617565_.dat']);
+ABCD = fullfile(['ABCD_0.617565_.dat']);
 
 
 
@@ -34,8 +34,8 @@ VB3=zeros(x_size,y_size,z_size);
 VB4=zeros(x_size,y_size,z_size);
 % Taking the concentration values and putting them into the correct
 % format, mesh-format
-Hom_Con = B(1,2)
-Cop_Con = B(1,1)
+Hom_Con = B(1,2);
+Cop_Con = B(1,1);
 ii=2;
 for i=1:x_size,
     for j=1:y_size,
@@ -51,15 +51,22 @@ for i=1:x_size,
     end
 end
 
-del=1.3;
+del_A=1.5;
+del_C=1.5;
+del_B2=2.7;
 
-pA=0.1*Cop_Con*del;
-pC=0.1*Cop_Con*del;
-pB1=0.355*Cop_Con*del;
-pB2=0.09*Cop_Con*del;
-pB3=0.355*Cop_Con*del;
+del_B1=10.35;
+del_B3=10.35;
 
-pB4=Hom_Con*del;
+del_B4=1.0;
+
+pA=0.1*Cop_Con*del_A;
+pC=0.1*Cop_Con*del_C;
+pB1=0.355*Cop_Con*del_B1;
+pB2=0.09*Cop_Con*del_B2;
+pB3=0.355*Cop_Con*del_B3;
+
+pB4=Hom_Con*del_B4;
 
 
 % clearing useless variables
@@ -95,8 +102,8 @@ daspect('mode');
 pB1 = patch(isosurface(X,Y,Z,VB1,cutB1),'FaceColor','green','EdgeColor','none');
 qB1 = patch(isocaps(X,Y,Z,VB1,cutB1),'FaceColor','green','EdgeColor', ...
           'none');
-alpha(pB1,0.5);
-alpha(qB1,0.5);
+alpha(pB1,0.25);
+alpha(qB1,0.25);
 
 % B2
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -111,16 +118,16 @@ alpha(qB2,0.5);
 pB3 = patch(isosurface(X,Y,Z,VB3,cutB3),'FaceColor','green','EdgeColor','none');
 qB3 = patch(isocaps(X,Y,Z,VB3,cutB3),'FaceColor','green','EdgeColor', ...
           'none');
-alpha(pB3,0.5);
-alpha(qB3,0.5);
+alpha(pB3,0.25);
+alpha(qB3,0.25);
 
 % B4
 % ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 pB4 = patch(isosurface(X,Y,Z,VB4,cutB4),'FaceColor','yellow','EdgeColor','none');
 qB4 = patch(isocaps(X,Y,Z,VB4,cutB4),'FaceColor','yellow','EdgeColor', ...
           'none');
-alpha(pB4,0.5);
-alpha(qB4,0.5);
+alpha(pB4,0.25);
+alpha(qB4,0.25);
 
 
 
