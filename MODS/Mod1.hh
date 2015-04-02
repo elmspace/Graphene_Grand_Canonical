@@ -5,7 +5,7 @@
  */
 void Mod1(double ****w, double ****phi, double ***eta, double *Ns, double ds, double ***k_vector, double *chi, double *dxyz, double **chiMatrix){
 
-  double del_mu = 0.5;
+  double del_mu = 0.1;
 
   // Cleaning the .dat file
   std::ofstream outputFile37("./RESULTS/MOD1.dat");
