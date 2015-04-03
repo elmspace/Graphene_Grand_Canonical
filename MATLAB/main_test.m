@@ -6,8 +6,8 @@ FileName = 0.0;
 File_String = num2str(FileName,8);
 
 
-xyz = fullfile(['xyz_0.617565_.dat']);
-ABCD = fullfile(['ABCD_0.617565_.dat']);
+xyz = fullfile(['xyz.dat']);
+ABCD = fullfile(['ABCD.dat']);
 
 
 
@@ -51,9 +51,9 @@ for i=1:x_size,
     end
 end
 
-del_A=1.5;
-del_C=1.5;
-del_B2=2.7;
+del_A=2.7;
+del_C=2.7;
+del_B2=12.7;
 
 del_B1=10.35;
 del_B3=10.35;

@@ -1,5 +1,16 @@
 reset
 
+file = "/Users/ashkandehghan/Desktop/SCFT_CODES/Graphene_Grand_Canonical/CALCULATIONS/kappa_0p5/MOD1.dat"
+
+f(x) = -1.4645
+plot file using 2:($7-$8) w lp title "L_z" lw 4 pt 4 lc -1,\
+f(x)
+
+pause(-1)
+
+
+reset
+
 set term postscript enhanced color
 set output "~/Desktop/fE.ps"
 

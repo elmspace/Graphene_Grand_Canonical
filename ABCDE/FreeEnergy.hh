@@ -34,17 +34,12 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
     deltafE=0.0;
   
     iter=0;  
+
+    epsilon=0.01;
+    gamma=0.01;
     
     do{
-
-      if(iter<500){
-	epsilon=0.01;
-	gamma=0.01;
-      }else{
-	epsilon=0.05;
-	gamma=0.05;
-      }
-    
+  
       iter++;
     
       fEW=0.0;
@@ -112,7 +107,7 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
 
       deltafE=fabs(currentfE-oldfE_iter);
 
-      //std::cout<<"Iter="<<iter<<"   fE="<<currentfE+fE_homo<<"   fE_homo="<<fE_homo<< "   delW=" << deltaW<<"   pCopo="<<Phi_Copo_Ord<<"   pHom="<<Phi_Homo_Ord<<std::endl;
+      std::cout<<"Iter="<<iter<<"   dfE="<<currentfE<<"   delW=" << deltaW<<"   pCopo="<<Phi_Copo_Ord<<"   pHom="<<Phi_Homo_Ord<<std::endl;
       oldfE_iter=currentfE;
 
       for(i=0;i<Nx;i++){
@@ -127,6 +122,8 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
 	}
       }
 
+      SaveData(phi,w,dxyz);
+      
     }while(deltaW>precision);//while(iter<maxIter);//
 
 
