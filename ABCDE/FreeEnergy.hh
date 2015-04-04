@@ -122,7 +122,7 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
 	}
       }
 
-      SaveData(phi,w,dxyz);
+      //SaveData(phi,w,dxyz);
       
     }while(deltaW>precision);//while(iter<maxIter);//
 

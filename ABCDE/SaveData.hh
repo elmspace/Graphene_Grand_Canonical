@@ -2,7 +2,7 @@ void SaveData(double ****phi, double ****w, double *dxyz){
 
   int i, j ,k;
 
-  /*
+ 
   std::string xyz="./MATLAB/xyz_" + std::to_string(Phi_Homo_Ord) + "_.dat";
   std::string ABCD="./MATLAB/ABCD_" + std::to_string(Phi_Homo_Ord) + "_.dat"; 
   //+++++++++++++++++++++++++++++ This output is setup for the matlab plotting +++++++++++++++++++
@@ -22,8 +22,8 @@ void SaveData(double ****phi, double ****w, double *dxyz){
   }
   outputFile8.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  */
-
+ 
+  /*
   std::string xyz="./MATLAB/xyz.dat";
   std::string ABCD="./MATLAB/ABCD.dat"; 
   //+++++++++++++++++++++++++++++ This output is setup for the matlab plotting +++++++++++++++++++
@@ -43,7 +43,7 @@ void SaveData(double ****phi, double ****w, double *dxyz){
   }
   outputFile8.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+  */
     
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writting to data files
