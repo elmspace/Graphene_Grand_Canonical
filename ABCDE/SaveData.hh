@@ -3,8 +3,8 @@ void SaveData(double ****phi, double ****w, double *dxyz){
   int i, j ,k;
 
  
-  std::string xyz="./MATLAB/xyz_" + std::to_string(Phi_Homo_Ord) + "_.dat";
-  std::string ABCD="./MATLAB/ABCD_" + std::to_string(Phi_Homo_Ord) + "_.dat"; 
+  std::string xyz="./MATLAB/xyz_" + std::to_string(abs(mu_homo)) + "_.dat";
+  std::string ABCD="./MATLAB/ABCD_" + std::to_string(abs(mu_homo)) + "_.dat"; 
   //+++++++++++++++++++++++++++++ This output is setup for the matlab plotting +++++++++++++++++++
   std::ofstream outputFile7(xyz);
   for (i=0;i<Nx;i++){
@@ -47,7 +47,10 @@ void SaveData(double ****phi, double ****w, double *dxyz){
     
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writting to data files
-  std::ofstream outputFile6("./omega.dat");
+
+
+  std::string omega="./OMEGA/DURING_RUN/omega_" + std::to_string(abs(mu_homo)) + "_.dat";
+  std::ofstream outputFile6(omega);
   for(i=0;i<Nx;i++){
     for(j=0;j<Ny;j++){
       for(k=0;k<Nz;k++){
