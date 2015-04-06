@@ -11,6 +11,7 @@ void omega(double ****w){
     std::ifstream infile;
     if(AlphaB==1){infile.open("./OMEGA/omega_20_20_20_phiC_99.read");}
     if(Bilayer==1){infile.open("./OMEGA/omega_20_20_20_Bilayer.read");}
+    if(CAC==1){infile.open("./OMEGA/omega_20_20_20_CAC.read");}
 
     
     
@@ -18,12 +19,14 @@ void omega(double ****w){
       for(j=0;j<Ny;j++){
 	for(k=0;k<Nz;k++){
 	  infile >> ii >> jj >> kk >> w[0][i][j][k] >> w[1][i][j][k] >> w[2][i][j][k] >> w[3][i][j][k] >> w[4][i][j][k] >> w[5][i][j][k];
-	  w[0][i][j][k] *=eps;
-	  w[1][i][j][k] *=eps;
-	  w[2][i][j][k] *=eps;
-	  w[3][i][j][k] *=eps;
-	  w[4][i][j][k] *=eps;
-	  w[5][i][j][k] *=eps;
+
+	  if((j>Ny/3)&&(j<2*Ny/3)){
+	    junk=w[0][i][j][k];
+	    w[0][i][j][k]=w[1][i][j][k];
+	    w[1][i][j][k]=junk;
+	  }
+
+
 	}
       }
     }

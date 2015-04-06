@@ -13,9 +13,12 @@ void Mod1(double ****w, double ****phi, double ***eta, double *Ns, double ds, do
   outputFile37.close();
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+  // 1=on  0=off
+  Test = 1;
+
   parameters(chi,ds,Ns,dxyz,chiMatrix);
     
-  mu_homo=-13.8;
+  mu_homo=-20.0;
   mu_copo=0.0;
   activity=(1.0/kappa)*exp(kappa*mu_homo - mu_copo);
   
@@ -32,10 +35,13 @@ void Mod1(double ****w, double ****phi, double ***eta, double *Ns, double ds, do
     outputFile37 <<kappa<<" "<<mu_homo<<" "<<Phi_Copo_Dis<<" "<<Phi_Homo_Dis<<" "<<Phi_Copo_Ord<<" "<<Phi_Homo_Ord<<" "<<Free_Energy<<" "<<Free_Energy_Homo<<" "<<Lx<<" "<<Ly<<" "<<Lz<<std::endl;
     outputFile37.close();
 
-
+    if(Test==1){break;}
+    
     mu_homo+=del_mu;
     mu_copo=0.0;
     activity=(1.0/kappa)*exp(kappa*mu_homo - mu_copo);
+
+    
 
   }while(Phi_Homo_Ord<0.9);
   

@@ -37,7 +37,8 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   Iomega=0;
 
   AlphaB=0;
-  Bilayer=1;
+  Bilayer=0;
+  CAC=1;
   
   
   //set the morphology 1=on 0=off
@@ -46,9 +47,9 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   BCC=0.0;
 
 
-  Lx=2.81;
-  Ly=4.68;
-  Lz=5.24;
+  Lx=2.0;
+  Ly=4.0;
+  Lz=4.0;
 
   dxyz[0]=Lx/Nx;
   dxyz[1]=Ly/Ny;
