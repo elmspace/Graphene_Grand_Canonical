@@ -19,14 +19,6 @@ void omega(double ****w){
       for(j=0;j<Ny;j++){
 	for(k=0;k<Nz;k++){
 	  infile >> ii >> jj >> kk >> w[0][i][j][k] >> w[1][i][j][k] >> w[2][i][j][k] >> w[3][i][j][k] >> w[4][i][j][k] >> w[5][i][j][k];
-
-	  if((j>Ny/3)&&(j<2*Ny/3)){
-	    junk=w[0][i][j][k];
-	    w[0][i][j][k]=w[1][i][j][k];
-	    w[1][i][j][k]=junk;
-	  }
-
-
 	}
       }
     }
