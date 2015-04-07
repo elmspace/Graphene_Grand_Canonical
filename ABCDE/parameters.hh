@@ -34,7 +34,7 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   // 0 = Read From File
   // 1 = Make Structure
   // 2 = Random Field
-  Iomega=1;
+  Iomega=0;
 
   AlphaB=0;
   Bilayer=0;
@@ -43,13 +43,17 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   
   //set the morphology 1=on 0=off
   LAM=0.0;
-  HEX=1.0;
+  HEX=0.0;
   BCC=0.0;
 
 
   Lx=10.0;
   Ly=10.0;
   Lz=10.0;
+
+  if(CAC==1){ Lx=2.64; Ly=4.36; Lz=3.5;}
+  if(AlphaB==1){ Lx=2.36; Ly=4.17; Lz=4.77;}
+
 
   dxyz[0]=Lx/Nx;
   dxyz[1]=Ly/Ny;
