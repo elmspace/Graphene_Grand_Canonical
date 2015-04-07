@@ -100,7 +100,7 @@ double homogenousfE(double **chiMatrix,double *chi){
   }
 
   fE_homo-=exp(mu_copo - wA_ave*fA - wC_ave*fC - wB1_ave*fB1 - wB2_ave*fB2 - wB3_ave*fB3);
-  fE_homo-=exp(mu_homo*kappa - wB4_ave*mu_homo)/kappa;
+  fE_homo-=exp(mu_homo*kappa - wB4_ave*kappa)/kappa;
 
 
   Phi_Copo_Dis = pA_ave+pC_ave+pB1_ave+pB2_ave+pB3_ave;
