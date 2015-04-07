@@ -51,14 +51,14 @@ for i=1:x_size,
     end
 end
 
-del_A=2.0;
-del_C=2.0;
-del_B2=12.7;
+del_A=1.5;
+del_C=1.5;
+del_B2=1.5;
 
-del_B1=10.35;
-del_B3=10.35;
+del_B1=1.5;
+del_B3=1.5;
 
-del_B4=10.0;
+del_B4=1.5;
 
 pA=0.1*Cop_Con*del_A;
 pC=0.1*Cop_Con*del_C;

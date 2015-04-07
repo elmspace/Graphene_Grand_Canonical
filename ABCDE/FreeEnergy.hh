@@ -22,7 +22,7 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
   // Calculating the Homogenous Free Energy
   fE_homo=homogenousfE(chiMatrix,chi);
 
-  //std::cout<<"Dis Copolymer Concentration:  "<<Phi_Copo_Dis<<"  Dis Homopolymer Concentration:   "<<Phi_Homo_Dis<<std::endl;
+  std::cout<<"Dis Copolymer Concentration:  "<<Phi_Copo_Dis<<"  Dis Homopolymer Concentration:   "<<Phi_Homo_Dis<<std::endl;
   
   msg=1.0;
   oldfE=1.0e2;
@@ -125,6 +125,8 @@ void FreeEnergy(double ****w, double ****phi, double ***eta, double *Ns, double 
       if(Test==1){
 	SaveData(phi,w,dxyz);
       }
+
+      //std::cin>>i;
 	
     }while(deltaW>precision);//while(iter<maxIter);//
 

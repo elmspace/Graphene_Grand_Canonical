@@ -61,6 +61,34 @@ void SaveData(double ****phi, double ****w, double *dxyz){
   }
   outputFile6.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // Writting Phi1D to data files
+
+  std::string phi_x="./PHI/phix.dat";
+  std::string phi_y="./PHI/phiy.dat";
+  std::string phi_z="./PHI/phiz.dat";
+  
+  std::ofstream outputFile16(phi_x);
+  for(i=0;i<Nx;i++){
+    outputFile16 <<i*dxyz[0]<< " "<<phi[0][i][Ny/2][Nz/2]<<" "<<phi[1][i][Ny/2][Nz/2]<<" "<<phi[2][i][Ny/2][Nz/2]<<" "<<phi[3][i][Ny/2][Nz/2]<<" "<<phi[4][i][Ny/2][Nz/2]<< " "<<phi[5][i][Ny/2][Nz/2]<<std::endl;
+  }
+  outputFile16.close();
+
+  std::ofstream outputFile26(phi_y);
+  for(j=0;j<Ny;j++){
+    outputFile26 <<j*dxyz[1]<< " "<<phi[0][Nx/2][j][Nz/2]<<" "<<phi[1][Nx/2][j][Nz/2]<<" "<<phi[2][Nx/2][j][Nz/2]<<" "<<phi[3][Nx/2][j][Nz/2]<<" "<<phi[4][Nx/2][j][Nz/2]<< " "<<phi[5][Nx/2][j][Nz/2]<<std::endl;
+  }
+  outputFile26.close();
+  
+  std::ofstream outputFile36(phi_z);
+  for(k=0;k<Nz;k++){
+    outputFile36 <<k*dxyz[2]<< " "<<phi[0][Nx/2][Ny/2][k]<<" "<<phi[1][Nx/2][Ny/2][k]<<" "<<phi[2][Nx/2][Ny/2][k]<<" "<<phi[3][Nx/2][Ny/2][k]<<" "<<phi[4][Nx/2][Ny/2][k]<< " "<<phi[5][Nx/2][Ny/2][k]<<std::endl;
+  }
+  outputFile36.close();
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
 };
 

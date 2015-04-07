@@ -18,7 +18,7 @@ void Mod1(double ****w, double ****phi, double ***eta, double *Ns, double ds, do
 
   parameters(chi,ds,Ns,dxyz,chiMatrix);
     
-  mu_homo=-20.0;
+  mu_homo=-13.0;
   mu_copo=0.0;
   activity=(1.0/kappa)*exp(kappa*mu_homo - mu_copo);
   

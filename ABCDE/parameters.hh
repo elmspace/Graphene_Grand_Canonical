@@ -6,7 +6,7 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   double Lx,Ly,Lz;
  
   // Minimize with respect to box size (yes=1, No=0)
-  box_min=1;
+  box_min=0;
 
   // Setting the generic chi parameters
   xAB=80.0;
@@ -34,7 +34,7 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   // 0 = Read From File
   // 1 = Make Structure
   // 2 = Random Field
-  Iomega=0;
+  Iomega=1;
 
   AlphaB=0;
   Bilayer=0;
@@ -47,9 +47,9 @@ void parameters(double *chi,double &ds,double *Ns,double *dxyz,double **chiMatri
   BCC=0.0;
 
 
-  Lx=2.0;
-  Ly=4.0;
-  Lz=4.0;
+  Lx=10.0;
+  Ly=10.0;
+  Lz=10.0;
 
   dxyz[0]=Lx/Nx;
   dxyz[1]=Ly/Ny;
